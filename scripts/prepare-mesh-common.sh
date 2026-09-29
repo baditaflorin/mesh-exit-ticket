@@ -33,3 +33,5 @@ if [ "$actual" != "$ref" ]; then
   echo "unexpected mesh-common revision: $actual" >&2
   exit 1
 fi
+
+npm --prefix "$repo_dir" ci
