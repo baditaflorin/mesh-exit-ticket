@@ -2,10 +2,7 @@ steps:
   verify:
     image: node:22
     commands:
-      - git init ../mesh-common
-      - git -C ../mesh-common remote add origin https://github.com/baditaflorin/mesh-common.git
-      - git -C ../mesh-common fetch --depth 1 origin 025f7ff72e50c4b54a3f4a2d8c88f4f600dec78f
-      - git -C ../mesh-common checkout --detach FETCH_HEAD
+      - bash scripts/prepare-mesh-common.sh
       - npm ci
       - npm run fmt:check
       - npm run typecheck
